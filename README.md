@@ -24,6 +24,17 @@ yarn test
 yarn lint
 ```
 
+## Deployment
+
+##### Hardhat local deployment
+```
+npx hardhat node
+npx hardhat run src/scripts/deploy.ts
+```
+
+##### Debug
+- Export environment variable `export DEBUG=abacus:*` in the command line or add in front of commands
+
 ## Learn more
 
 For more information, see the [Abacus documentation](https://docs.useabacus.network/abacus-docs/developers/getting-started).

@@ -27,7 +27,7 @@ yarn lint
 ##### Hardhat local deployment
 ```
 npx hardhat node
-npx hardhat run src/scripts/deploy.ts
+npx hardhat run src/scripts/deploy.ts --network localhost
 ```
 
 ##### Debug

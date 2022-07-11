@@ -1,8 +1,6 @@
-# Abacus 'Hello World' App Template
+# Mento Abacus Prototype
 
-A basic Abacus application with a router contract that can dispatch messages.
-
-This is a template repository from which new repos can be created.
+This prototype is based on the Abacus App Template (https://github.com/abacus-network/abacus-app-template) and is testing Abacus functionality for the Mento decentralized reserve. 
 
 ## Setup
 

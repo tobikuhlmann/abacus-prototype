@@ -1,14 +1,17 @@
 import {
   AbacusCore,
   serializeContracts,
-  MultiProvider
+  MultiProvider,
 } from '@abacus-network/sdk';
 import '@nomiclabs/hardhat-ethers';
-import { getConfigMap, mentoTestnet2Configs , signers_addresses } from '../deploy/config_remote_testnets';
+import {
+  getConfigMap,
+  mentoTestnet2Configs,
+  signers_addresses,
+} from '../deploy/config_remote_testnets';
 import { HelloWorldDeployer } from '../deploy/deploy';
 
 async function main() {
-
   const multiProvider = new MultiProvider(mentoTestnet2Configs);
 
   const core = AbacusCore.fromEnvironment('mento_testnet2', multiProvider);

@@ -10,7 +10,11 @@ import {
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
 import { expect } from 'chai';
 import { ethers } from 'hardhat';
-import { getConfigMap, HelloWorldConfig, testConfigs } from '../deploy/config';
+import {
+  getConfigMap,
+  HelloWorldConfig,
+  testConfigs,
+} from '../deploy/config_local_testnets';
 import { HelloWorldDeployer } from '../deploy/deploy';
 import { HelloWorld } from '../types';
 

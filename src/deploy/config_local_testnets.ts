@@ -16,7 +16,7 @@ export const testConfigs = {
 };
 
 export function getConfigMap(
-    signerAddress: string,
+  signerAddress: string,
 ): ChainMap<TestChainNames, { owner: string }> {
   return {
     test1: {

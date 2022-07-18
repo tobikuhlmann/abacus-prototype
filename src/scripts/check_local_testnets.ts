@@ -6,14 +6,14 @@
   getMultiProviderFromConfigAndSigner,
 } from '@abacus-network/sdk';
 import { ethers } from 'hardhat';
-import { HelloWorldChecker } from '../deploy/check';
+import { HelloWorldChecker } from '../deploy/check_local_testnets';
 import { getConfigMap, testConfigs } from '../deploy/config';
 import { HelloWorldApp } from '../app/app';
 import { HelloWorldContracts, helloWorldFactories } from '../app/contracts';
 import testEnvironmentAddresses from '../app/environments/test.json';*/
 
-async function check() {
-/*
+async function check_local_testnets() {
+  /*
   const [signer] = await ethers.getSigners();
   const multiProvider = getMultiProviderFromConfigAndSigner(
     testConfigs,
@@ -33,11 +33,11 @@ async function check() {
   );
 
   const helloWorldChecker = new HelloWorldChecker(multiProvider, app, config);
-  await helloWorldChecker.check();
+  await helloWorldChecker.check_local_testnets();
   helloWorldChecker.expectEmpty();
 */
 }
 
-check()
+check_local_testnets()
   .then(() => console.info('Check complete'))
   .catch(console.error);

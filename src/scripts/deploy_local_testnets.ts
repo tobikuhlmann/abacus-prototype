@@ -13,13 +13,13 @@ import { HelloWorldDeployer } from '../deploy/deploy';
 async function main() {
   const [signer] = await ethers.getSigners();
   const multiProvider = getMultiProviderFromConfigAndSigner(
-      testConfigs,
-      signer,
+    testConfigs,
+    signer,
   );
 
   const core = AbacusCore.fromEnvironment('test', multiProvider);
   const config = core.extendWithConnectionClientConfig(
-      getConfigMap(signer.address),
+    getConfigMap(signer.address),
   );
 
   const deployer = new HelloWorldDeployer(multiProvider, config, core);
@@ -30,5 +30,5 @@ async function main() {
 }
 
 main()
-    .then(() => console.info('Deploy complete'))
-    .catch(console.error);
+  .then(() => console.info('Deploy complete'))
+  .catch(console.error);

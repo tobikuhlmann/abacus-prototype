@@ -24,13 +24,13 @@ yarn lint
 
 ## Deployment
 
-##### Hardhat local deployment
+##### Local deployment
 ```
 npx hardhat node
 npx hardhat run src/scripts/deploy_local_testnets.ts --network localhost
 ```
 
-##### Hardhat remote testnet deployment
+##### Remote testnet deployment
 ```
 npx hardhat run src/scripts/deploy_remote_testnets.ts
 ```

@@ -9,7 +9,7 @@ import {
 import '@nomiclabs/hardhat-waffle';
 import { ethers } from 'hardhat';
 import { HelloWorldChecker } from '../deploy/check';
-import { getConfigMap, HelloWorldConfig, testConfigs } from '../deploy/config';
+import { getConfigMap, HelloWorldConfig, testConfigs } from '../deploy/config_remote_testnets';
 import { HelloWorldDeployer } from '../deploy/deploy';
 import { HelloWorldApp } from '../app/app';
 import { HelloWorldContracts } from '../app/contracts';

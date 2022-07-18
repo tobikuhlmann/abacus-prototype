@@ -1,8 +1,8 @@
 import {
-  chainConnectionConfigs,
   ChainMap,
-  TestChainNames,
   RouterConfig,
+  TestChainNames,
+  chainConnectionConfigs,
 } from '@abacus-network/sdk';
 
 export type HelloWorldConfig = RouterConfig;
@@ -16,7 +16,7 @@ export const testConfigs = {
 };
 
 export function getConfigMap(
-  signerAddress: string,
+    signerAddress: string,
 ): ChainMap<TestChainNames, { owner: string }> {
   return {
     test1: {

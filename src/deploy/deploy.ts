@@ -10,7 +10,7 @@ import {
   helloWorldFactories,
   HelloWorldFactories,
 } from '../app/contracts';
-import { HelloWorldConfig } from './config';
+import { HelloWorldConfig } from './config_remote_testnets';
 
 export class HelloWorldDeployer<
   Chain extends ChainName,

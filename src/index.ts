@@ -1,5 +1,5 @@
 export { HelloWorldChecker } from './deploy/check';
-export { HelloWorldConfig } from './deploy/config';
+export { HelloWorldConfig } from './deploy/config_remote_testnets';
 export { HelloWorldDeployer } from './deploy/deploy';
 export { HelloWorldApp } from './app/app';
 export {

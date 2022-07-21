@@ -1,11 +1,13 @@
+import '@nomiclabs/hardhat-ethers';
+import { ethers } from 'hardhat';
+
 import {
   AbacusCore,
   getMultiProviderFromConfigAndSigner,
   serializeContracts,
 } from '@abacus-network/sdk';
-import '@nomiclabs/hardhat-ethers';
-import { ethers } from 'hardhat';
-import { getConfigMap, testConfigs } from '../deploy/config';
+
+import { getConfigMap, testConfigs } from '../deploy/config_local_testnets';
 import { HelloWorldDeployer } from '../deploy/deploy';
 
 async function main() {

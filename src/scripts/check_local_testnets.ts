@@ -1,4 +1,4 @@
-/*import {
+import {
   AbacusCore,
   buildContracts,
   ChainMap,
@@ -6,14 +6,14 @@
   getMultiProviderFromConfigAndSigner,
 } from '@abacus-network/sdk';
 import { ethers } from 'hardhat';
-import { HelloWorldChecker } from '../deploy/check_local_testnets';
-import { getConfigMap, testConfigs } from '../deploy/config';
+import { HelloWorldChecker } from '../deploy/check';
+import { getConfigMap, testConfigs } from '../deploy/config_local_testnets';
 import { HelloWorldApp } from '../app/app';
 import { HelloWorldContracts, helloWorldFactories } from '../app/contracts';
-import testEnvironmentAddresses from '../app/environments/test.json';*/
+import testEnvironmentAddresses from '../app/environments/test.json';
 
-async function check_local_testnets() {
-  /*
+async function check() {
+
   const [signer] = await ethers.getSigners();
   const multiProvider = getMultiProviderFromConfigAndSigner(
     testConfigs,
@@ -33,11 +33,11 @@ async function check_local_testnets() {
   );
 
   const helloWorldChecker = new HelloWorldChecker(multiProvider, app, config);
-  await helloWorldChecker.check_local_testnets();
+  await helloWorldChecker.check();
   helloWorldChecker.expectEmpty();
-*/
+
 }
 
-check_local_testnets()
+check()
   .then(() => console.info('Check complete'))
   .catch(console.error);

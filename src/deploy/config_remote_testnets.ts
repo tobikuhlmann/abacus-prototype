@@ -30,11 +30,13 @@ const alfajores = {
   provider: alfajores_provider,
   confirmations: 1,
   signer: alfajores_signer,
+  blockExplorerUrl: 'https://alfajores-blockscout.celo-testnet.org/' //https://alfajores.celoscan.io/
 };
 const kovan = {
   provider: kovan_provider,
   confirmations: 1,
   signer: kovan_signer,
+  blockExplorerUrl: 'https://kovan.etherscan.io/'
 };
 
 export const mentoTestnet2Configs = {

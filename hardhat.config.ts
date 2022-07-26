@@ -42,4 +42,28 @@ module.exports = {
   mocha: {
     timeout: 100000
   },
+  etherscan: {
+    apiKey: {
+      kovan: "5YCSX9Y352QN7GUCQRB9IDHDU4HMPKJ1U8",
+      alfajores: "FXEVKN5RDN1DR4HK6SPDSR9RW5187Q31JM"
+    },
+    customChains: [
+      {
+        network: "alfajores",
+        chainId: 44787,
+        urls: {
+          apiURL: "https://api-alfajores.celoscan.io/",
+          browserURL: "https://alfajores.celoscan.io/"
+        }
+      },
+      {
+        network: "kovan",
+        chainId: 42,
+        urls: {
+          apiURL: "https://api-kovan.etherscan.io/",
+          browserURL: "https://kovan.etherscan.io/"
+        }
+      },
+      ]
+  }
 };

@@ -13,7 +13,6 @@ import { HelloWorldContracts, helloWorldFactories } from '../app/contracts';
 import testEnvironmentAddresses from '../app/environments/test.json';
 
 async function check() {
-
   const [signer] = await ethers.getSigners();
   const multiProvider = getMultiProviderFromConfigAndSigner(
     testConfigs,
@@ -35,7 +34,6 @@ async function check() {
   const helloWorldChecker = new HelloWorldChecker(multiProvider, app, config);
   await helloWorldChecker.check();
   helloWorldChecker.expectEmpty();
-
 }
 
 check()

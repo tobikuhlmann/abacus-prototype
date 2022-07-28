@@ -29,7 +29,7 @@ describe('HelloWorld', async () => {
 
   before(async () => {
     multiProvider = new MultiProvider(mentoTestnet2Configs);
-    core = AbacusCore.fromEnvironment('mento_testnet2', multiProvider);
+    core = AbacusCore.fromEnvironment('testnet2', multiProvider);
     config = core.extendWithConnectionClientConfig(
       getConfigMap(signers_addresses),
     );
@@ -39,10 +39,10 @@ describe('HelloWorld', async () => {
     const helloWorld = new HelloWorldDeployer(multiProvider, config, core);
     const contracts = await helloWorld.deploy();
 
-    console.log('---contracts---')
+    console.log('---contracts---');
     console.log(localChain + ': ' + contracts[localChain].router.address);
     console.log(remoteChain + ': ' + contracts[remoteChain].router.address);
-    console.log('------')
+    console.log('------');
 
     local = contracts[localChain].router;
     remote = contracts[remoteChain].router;
@@ -68,7 +68,7 @@ describe('HelloWorld', async () => {
 
   it('receives a message', async () => {
     // Give Abacus time to relay message
-    await new Promise(f => setTimeout(f, 20000));
+    await new Promise((f) => setTimeout(f, 20000));
     // The counts are correct
     expect(await remote.sent()).to.equal(0);
     expect(await remote.received()).to.equal(1);

@@ -1,8 +1,4 @@
-import {
-  AbacusCore,
-  ChainMap,
-  MultiProvider,
-} from '@abacus-network/sdk';
+import { AbacusCore, ChainMap, MultiProvider } from '@abacus-network/sdk';
 import '@nomiclabs/hardhat-waffle';
 import { HelloWorldChecker } from '../deploy/check';
 import {
@@ -27,9 +23,9 @@ describe('deploy', async () => {
   before(async () => {
     multiProvider = new MultiProvider(mentoTestnet2Configs);
 
-    core = AbacusCore.fromEnvironment('mento_testnet2', multiProvider);
+    core = AbacusCore.fromEnvironment('testnet2', multiProvider);
     config = core.extendWithConnectionClientConfig(
-        getConfigMap(signers_addresses),
+      getConfigMap(signers_addresses),
     );
     deployer = new HelloWorldDeployer(multiProvider, config, core);
   });

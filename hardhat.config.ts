@@ -6,7 +6,9 @@ import 'solidity-coverage';
 import {
   alfajores_private_key,
   kovan_json_rpc_provider,
-  kovan_private_key
+  kovan_private_key,
+  celoscan_alfajores_api_key,
+  etherscan_kovan_api_key
 } from "./secrets.json";
 
 
@@ -42,4 +44,28 @@ module.exports = {
   mocha: {
     timeout: 100000
   },
+  etherscan: {
+    apiKey: {
+      kovan: etherscan_kovan_api_key,
+      alfajores: celoscan_alfajores_api_key
+    },
+    customChains: [
+      {
+        network: "alfajores",
+        chainId: 44787,
+        urls: {
+          apiURL: "https://api-alfajores.celoscan.io/",
+          browserURL: "https://alfajores.celoscan.io/"
+        }
+      },
+      {
+        network: "kovan",
+        chainId: 42,
+        urls: {
+          apiURL: "https://api-kovan.etherscan.io/",
+          browserURL: "https://kovan.etherscan.io/"
+        }
+      },
+      ]
+  }
 };

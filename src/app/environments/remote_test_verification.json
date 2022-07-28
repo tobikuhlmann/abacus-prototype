@@ -1,0 +1,18 @@
+{
+  "alfajores": [
+    {
+      "name": "HelloWorld",
+      "address": "0x42b37F4772292585Fc7A80d6E78718554bDCfe38",
+      "constructorArguments": "000000000000000000000000c41169650335ad274157ea5116cdf227430a68a30000000000000000000000000000000000000000000000000000000000000000",
+      "isProxy": false
+    }
+  ],
+  "kovan": [
+    {
+      "name": "HelloWorld",
+      "address": "0x5A7BEfCe1B8e2202bD9B5319419d37D552758d0D",
+      "constructorArguments": "000000000000000000000000fa1fbf362144ae1bef2e33409948da1fb812bb410000000000000000000000000000000000000000000000000000000000000000",
+      "isProxy": false
+    }
+  ]
+}

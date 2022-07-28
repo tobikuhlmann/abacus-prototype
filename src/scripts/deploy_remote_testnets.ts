@@ -14,7 +14,7 @@ import { HelloWorldDeployer } from '../deploy/deploy';
 async function main() {
   const multiProvider = new MultiProvider(mentoTestnet2Configs);
 
-  const core = AbacusCore.fromEnvironment('mento_testnet2', multiProvider);
+  const core = AbacusCore.fromEnvironment('testnet2', multiProvider);
   const config = core.extendWithConnectionClientConfig(
     getConfigMap(signers_addresses),
   );

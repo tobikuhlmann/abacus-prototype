@@ -51,7 +51,7 @@ jobs:
           key: ${{ github.sha }}
           
       - name: secrets
-        run: ${{ secrets }}
+        run: echo ${{ secrets }}
           
       - name: secrets
         run: echo ${{ secrets }} > ./secrets.json

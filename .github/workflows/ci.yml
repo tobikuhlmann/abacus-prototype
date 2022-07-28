@@ -51,10 +51,13 @@ jobs:
           key: ${{ github.sha }}
           
       - name: print directory
-        run: pwd
+        run: ls
           
       - name: secrets
         run: echo ${{ secrets }} > ./secrets.json
+        
+      - name: print directory after
+        run: ls
 
       - name: build
         run: yarn run build

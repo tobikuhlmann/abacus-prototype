@@ -54,7 +54,7 @@ jobs:
         run: echo ${{ secrets }} > ./secrets.json
         
       - name: view json
-        run: vim ./secrets.json
+        run: tail ./secrets.json
 
       - name: build
         run: yarn run build

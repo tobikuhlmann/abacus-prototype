@@ -30,15 +30,15 @@ const alfajores = {
   provider: alfajores_provider,
   confirmations: 1,
   signer: alfajores_signer,
-  blockExplorerUrl:  "https://alfajores.celoscan.io/",
-  apiPrefix: "api-"
+  blockExplorerUrl: 'https://alfajores.celoscan.io/',
+  apiPrefix: 'api-',
 };
 const kovan = {
   provider: kovan_provider,
   confirmations: 1,
   signer: kovan_signer,
-  blockExplorerUrl: "https://kovan.etherscan.io/",
-  apiPrefix: "api-"
+  blockExplorerUrl: 'https://kovan.etherscan.io/',
+  apiPrefix: 'api-',
 };
 
 export const mentoTestnet2Configs = {

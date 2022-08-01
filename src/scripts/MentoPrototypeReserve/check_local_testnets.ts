@@ -7,7 +7,10 @@ import {
 } from '@abacus-network/sdk';
 import { ethers } from 'hardhat';
 import { HelloWorldChecker } from '../../deploy/MentoPrototypeReserve/check';
-import { getConfigMap, testConfigs } from '../../deploy/MentoPrototypeReserve/config_local_testnets';
+import {
+  getConfigMap,
+  testConfigs,
+} from '../../deploy/MentoPrototypeReserve/config_local_testnets';
 import { HelloWorldApp } from '../../app/app';
 import { HelloWorldContracts, helloWorldFactories } from '../../app/contracts';
 import testEnvironmentAddresses from '../../app/environments/test.json';

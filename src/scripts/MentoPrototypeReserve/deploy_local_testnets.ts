@@ -7,7 +7,10 @@ import {
   serializeContracts,
 } from '@abacus-network/sdk';
 
-import { getConfigMap, testConfigs } from '../../deploy/MentoPrototypeReserve/config_local_testnets';
+import {
+  getConfigMap,
+  testConfigs,
+} from '../../deploy/MentoPrototypeReserve/config_local_testnets';
 import { HelloWorldDeployer } from '../../deploy/MentoPrototypeReserve/deploy';
 
 async function main() {

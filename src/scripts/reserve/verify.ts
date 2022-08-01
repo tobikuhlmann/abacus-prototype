@@ -4,7 +4,7 @@ import verification from '../../app/environments/remote_test_verification.json';
 
 import { CompilerOptions, MentoChainMap } from './types';
 import { execCmd } from '../../utils/utils';
-import { mentoTestnet2Configs } from '../../deploy/MentoPrototypeReserve/config_remote_testnets';
+import { mentoTestnet2Configs } from '../../deploy/reserve/config_remote_testnets';
 import { MultiProvider, ContractVerifier } from '@abacus-network/sdk';
 import {
   etherscan_kovan_api_key,

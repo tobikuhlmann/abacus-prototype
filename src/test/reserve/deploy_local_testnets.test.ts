@@ -8,13 +8,13 @@ import {
 } from '@abacus-network/sdk';
 import '@nomiclabs/hardhat-waffle';
 import { ethers } from 'hardhat';
-import { HelloWorldChecker } from '../../deploy/MentoPrototypeReserve/check';
+import { HelloWorldChecker } from '../../deploy/reserve/check';
 import {
   getConfigMap,
   HelloWorldConfig,
   testConfigs,
-} from '../../deploy/MentoPrototypeReserve/config_local_testnets';
-import { HelloWorldDeployer } from '../../deploy/MentoPrototypeReserve/deploy';
+} from '../../deploy/reserve/config_local_testnets';
+import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
 import { HelloWorldApp } from '../../app/app';
 import { HelloWorldContracts } from '../../app/contracts';
 

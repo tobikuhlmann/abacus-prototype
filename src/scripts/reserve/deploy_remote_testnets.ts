@@ -8,8 +8,8 @@ import {
   getConfigMap,
   mentoTestnet2Configs,
   signers_addresses,
-} from '../../deploy/MentoPrototypeReserve/config_remote_testnets';
-import { HelloWorldDeployer } from '../../deploy/MentoPrototypeReserve/deploy';
+} from '../../deploy/reserve/config_remote_testnets';
+import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
 
 async function main() {
   const multiProvider = new MultiProvider(mentoTestnet2Configs);

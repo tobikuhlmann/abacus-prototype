@@ -1,6 +1,6 @@
-export { HelloWorldChecker } from './deploy/check';
-export { HelloWorldConfig } from './deploy/config_remote_testnets';
-export { HelloWorldDeployer } from './deploy/deploy';
+export { HelloWorldChecker } from './deploy/MentoPrototypeReserve/check';
+export { HelloWorldConfig } from './deploy/MentoPrototypeReserve/config_remote_testnets';
+export { HelloWorldDeployer } from './deploy/MentoPrototypeReserve/deploy';
 export { HelloWorldApp } from './app/app';
 export {
   HelloWorldContracts,

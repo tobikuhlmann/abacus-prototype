@@ -6,7 +6,7 @@ import {
   Remotes,
 } from '@abacus-network/sdk';
 import { ethers } from 'ethers';
-import { ReceivedHelloWorldEvent } from '../types/contracts/HelloWorld';
+import { ReceivedHelloWorldEvent } from '../types/contracts/MentoPrototypeReserve/HelloWorld';
 import { HelloWorldContracts } from './contracts';
 
 export class HelloWorldApp<

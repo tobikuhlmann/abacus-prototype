@@ -1,13 +1,13 @@
 import { AbacusCore, ChainMap, MultiProvider } from '@abacus-network/sdk';
 import '@nomiclabs/hardhat-waffle';
-import { HelloWorldChecker } from '../../deploy/MentoPrototypeReserve/check';
+import { HelloWorldChecker } from '../../deploy/reserve/check';
 import {
   getConfigMap,
   HelloWorldConfig,
   mentoTestnet2Configs,
   signers_addresses,
-} from '../../deploy/MentoPrototypeReserve/config_remote_testnets';
-import { HelloWorldDeployer } from '../../deploy/MentoPrototypeReserve/deploy';
+} from '../../deploy/reserve/config_remote_testnets';
+import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
 import { HelloWorldApp } from '../../app/app';
 import { HelloWorldContracts } from '../../app/contracts';
 

@@ -14,8 +14,8 @@ import {
   getConfigMap,
   HelloWorldConfig,
   testConfigs,
-} from '../../deploy/MentoPrototypeReserve/config_local_testnets';
-import { HelloWorldDeployer } from '../../deploy/MentoPrototypeReserve/deploy';
+} from '../../deploy/reserve/config_local_testnets';
+import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
 import { HelloWorld } from '../../types';
 
 describe('HelloWorld', async () => {

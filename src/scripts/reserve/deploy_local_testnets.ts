@@ -10,8 +10,8 @@ import {
 import {
   getConfigMap,
   testConfigs,
-} from '../../deploy/MentoPrototypeReserve/config_local_testnets';
-import { HelloWorldDeployer } from '../../deploy/MentoPrototypeReserve/deploy';
+} from '../../deploy/reserve/config_local_testnets';
+import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
 
 async function main() {
   const [signer] = await ethers.getSigners();

@@ -9,3 +9,11 @@ src/deploy/output
 test/outputs/
 *.swp
 .yarn/install-state.gz
+.idea/
+ contracts/.DS_Store
+secrets.json
+src/deploy/.DS_Store
+src/scripts/.DS_Store
+src/test/.DS_Store
+*.DS_Store
+

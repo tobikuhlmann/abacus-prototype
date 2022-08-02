@@ -2,7 +2,7 @@ import { existsSync, readFileSync, writeFileSync } from 'fs';
 import verification from '../../app/environments/remote_test_verification.json';
 //import abacus_core_mento_test from '../app/environments/abacus_core_mento_test.json'
 
-import { CompilerOptions, MentoChainMap } from './types';
+import { CompilerOptions, MentoChainMap } from '../types';
 import { execCmd } from '../../utils/utils';
 import { mentoTestnet2Configs } from '../../deploy/reserve/config_remote_testnets';
 import { MultiProvider, ContractVerifier } from '@abacus-network/sdk';

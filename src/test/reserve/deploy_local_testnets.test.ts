@@ -11,12 +11,12 @@ import { ethers } from 'hardhat';
 import { HelloWorldChecker } from '../../deploy/reserve/check';
 import {
   getConfigMap,
-  HelloWorldConfig,
   testConfigs,
 } from '../../deploy/reserve/config_local_testnets';
 import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
-import { HelloWorldApp } from '../../app/app';
-import { HelloWorldContracts } from '../../app/contracts';
+import { HelloWorldApp } from '../../app/reserve/app';
+import { HelloWorldContracts } from '../../app/reserve/contracts';
+import { HelloWorldConfig} from '../../deploy/reserve/types'
 
 describe('deploy', async () => {
   let multiProvider: MultiProvider<TestChainNames>;

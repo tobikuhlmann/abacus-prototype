@@ -9,8 +9,8 @@ import {
   HelloWorldContracts,
   helloWorldFactories,
   HelloWorldFactories,
-} from '../../app/contracts';
-import { HelloWorldConfig } from './config_remote_testnets';
+} from '../../app/reserve/contracts';
+import { HelloWorldConfig } from './types';
 
 export class HelloWorldDeployer<
   Chain extends ChainName,

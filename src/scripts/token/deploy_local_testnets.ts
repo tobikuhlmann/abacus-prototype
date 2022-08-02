@@ -6,12 +6,13 @@ import {
   getMultiProviderFromConfigAndSigner,
   serializeContracts,
 } from '@abacus-network/sdk';
-
 import {
   getConfigMap,
+  extendWithTokenConfig,
   testConfigs,
-} from '../../deploy/reserve/config_local_testnets';
-import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
+  tokenConfig,
+} from '../../deploy/token/config_local_testnets';
+import { MentoPrototypeTokenDeployer } from '../../deploy/token/deploy';
 
 async function main() {
   const [signer] = await ethers.getSigners();
@@ -21,15 +22,12 @@ async function main() {
   );
 
   const core = AbacusCore.fromEnvironment('test', multiProvider);
-  const config = core.extendWithConnectionClientConfig(
+  const connection_config = core.extendWithConnectionClientConfig(
     getConfigMap(signer.address),
   );
+  const config = extendWithTokenConfig(connection_config, tokenConfig)
 
-  console.log('config')
-  console.log(config)
-  console.log(core.getConnectionClientConfigMap())
-
-  const deployer = new HelloWorldDeployer(multiProvider, config, core);
+  const deployer = new MentoPrototypeTokenDeployer(multiProvider, config, core);
   const chainToContracts = await deployer.deploy();
   const addresses = serializeContracts(chainToContracts);
   console.info('===Contract Addresses===');

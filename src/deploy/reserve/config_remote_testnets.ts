@@ -1,4 +1,4 @@
-import { ChainMap, RouterConfig } from '@abacus-network/sdk';
+import { ChainMap } from '@abacus-network/sdk';
 import { ethers } from 'hardhat';
 import { StaticCeloJsonRpcProvider } from '@abacus-network/celo-ethers-provider';
 import {
@@ -6,8 +6,6 @@ import {
   kovan_json_rpc_provider,
   kovan_private_key,
 } from '../../../secrets.json';
-
-export type HelloWorldConfig = RouterConfig;
 
 const alfajores_provider = new StaticCeloJsonRpcProvider(
   'https://alfajores-forno.celo-testnet.org',

@@ -1,5 +1,5 @@
 import { RouterContracts, RouterFactories } from '@abacus-network/sdk';
-import { HelloWorld, HelloWorld__factory } from '../types';
+import { HelloWorld, HelloWorld__factory } from '../../types';
 
 export type HelloWorldFactories = RouterFactories<HelloWorld>;
 

@@ -11,8 +11,8 @@ import {
   getConfigMap,
   testConfigs,
 } from '../../deploy/reserve/config_local_testnets';
-import { HelloWorldApp } from '../../app/app';
-import { HelloWorldContracts, helloWorldFactories } from '../../app/contracts';
+import { HelloWorldApp } from '../../app/reserve/app';
+import { HelloWorldContracts, helloWorldFactories } from '../../app/reserve/contracts';
 import testEnvironmentAddresses from '../../app/environments/test.json';
 
 async function check() {

@@ -37,18 +37,24 @@ contract MentoPrototypeToken is Router, ERC20Upgradeable {
 
     /**
      * @notice Initializes the Abacus router, ERC20 metadata, and mints initial supply to deployer.
-     * @param _xAppConnectionManager The address of the XAppConnectionManager contract.
+     * @param _abacusConnectionManager The address of the AbacusConnectionManager contract.
+     * @param _interchainGasPaymaster The address of the InterchainGasPaymaster contract.
      * @param _totalSupply The initial supply of the token.
      * @param _name The name of the token.
      * @param _symbol The symbol of the token.
      */
     function initialize(
-        address _xAppConnectionManager,
+        address _abacusConnectionManager,
+        address _interchainGasPaymaster,
         uint256 _totalSupply,
         string memory _name,
         string memory _symbol
     ) external initializer {
-        __Router_initialize(_xAppConnectionManager);
+        // Transfer ownership of the contract to deployer
+        _transferOwnership(msg.sender);
+        // Set the addresses for the ACM and IGP
+        _setAbacusConnectionManager(_abacusConnectionManager);
+        _setInterchainGasPaymaster(_interchainGasPaymaster);
         __ERC20_init(_name, _symbol);
         _mint(msg.sender, _totalSupply);
     }

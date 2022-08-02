@@ -27,12 +27,12 @@ yarn lint
 ##### Local deployment
 ```
 yarn hardhat node
-yarn hardhat run src/scripts/deploy_local_testnets.ts --network localhost
+yarn hardhat run src/scripts/{$application}/deploy_local_testnets.ts --network localhost
 ```
 
 ##### Remote testnet deployment
 ```
-yarn hardhat run src/scripts/deploy_remote_testnets.ts
+yarn hardhat run src/scripts/{$application}/deploy_remote_testnets.ts
 ```
 
 ##### Debug

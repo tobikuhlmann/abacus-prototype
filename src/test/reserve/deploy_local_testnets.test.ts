@@ -1,7 +1,8 @@
 import {
   ChainMap,
-  getMultiProviderFromConfigAndSigner,
+  getTestMultiProvider,
   MultiProvider,
+  testChainConnectionConfigs,
   TestChainNames,
   TestCoreApp,
   TestCoreDeployer,
@@ -9,14 +10,11 @@ import {
 import '@nomiclabs/hardhat-waffle';
 import { ethers } from 'hardhat';
 import { HelloWorldChecker } from '../../deploy/reserve/check';
-import {
-  getConfigMap,
-  testConfigs,
-} from '../../deploy/reserve/config_local_testnets';
+import { getConfigMap } from '../../deploy/reserve/config_local_testnets';
 import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
 import { HelloWorldApp } from '../../app/reserve/app';
 import { HelloWorldContracts } from '../../app/reserve/contracts';
-import { HelloWorldConfig} from '../../deploy/reserve/types'
+import { HelloWorldConfig } from '../../deploy/reserve/types';
 
 describe('deploy', async () => {
   let multiProvider: MultiProvider<TestChainNames>;
@@ -28,7 +26,7 @@ describe('deploy', async () => {
 
   before(async () => {
     const [signer] = await ethers.getSigners();
-    multiProvider = getMultiProviderFromConfigAndSigner(testConfigs, signer);
+    multiProvider = getTestMultiProvider(signer, testChainConnectionConfigs);
 
     const coreDeployer = new TestCoreDeployer(multiProvider);
     const coreContractsMaps = await coreDeployer.deploy();

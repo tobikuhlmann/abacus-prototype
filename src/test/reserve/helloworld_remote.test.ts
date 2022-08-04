@@ -7,10 +7,10 @@ import {
 import { expect } from 'chai';
 import {
   getConfigMap,
-  HelloWorldConfig,
   mentoTestnet2Configs,
   signers_addresses,
 } from '../../deploy/reserve/config_remote_testnets';
+import { HelloWorldConfig } from '../../deploy/reserve/types';
 import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
 import { HelloWorld } from '../../types';
 
@@ -38,11 +38,6 @@ describe('HelloWorld', async () => {
   before(async () => {
     const helloWorld = new HelloWorldDeployer(multiProvider, config, core);
     const contracts = await helloWorld.deploy();
-
-    console.log('---contracts---');
-    console.log(localChain + ': ' + contracts[localChain].router.address);
-    console.log(remoteChain + ': ' + contracts[remoteChain].router.address);
-    console.log('------');
 
     local = contracts[localChain].router;
     remote = contracts[remoteChain].router;

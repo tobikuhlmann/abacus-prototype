@@ -1,16 +1,4 @@
-import {
-  ChainMap,
-  TestChainNames,
-  chainConnectionConfigs,
-} from '@abacus-network/sdk';
-
-// TODO reduce this config boilerplate
-
-export const testConfigs = {
-  test1: chainConnectionConfigs.test1,
-  test2: chainConnectionConfigs.test2,
-  test3: chainConnectionConfigs.test3,
-};
+import { ChainMap, TestChainNames } from '@abacus-network/sdk';
 
 export function getConfigMap(
   signerAddress: string,

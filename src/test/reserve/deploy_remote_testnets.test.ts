@@ -3,10 +3,10 @@ import '@nomiclabs/hardhat-waffle';
 import { HelloWorldChecker } from '../../deploy/reserve/check';
 import {
   getConfigMap,
-  HelloWorldConfig,
   mentoTestnet2Configs,
   signers_addresses,
 } from '../../deploy/reserve/config_remote_testnets';
+import { HelloWorldConfig } from '../../deploy/reserve/types';
 import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
 import { HelloWorldApp } from '../../app/reserve/app';
 import { HelloWorldContracts } from '../../app/reserve/contracts';

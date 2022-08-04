@@ -3,23 +3,24 @@ import {
   buildContracts,
   ChainMap,
   ChainName,
-  getMultiProviderFromConfigAndSigner,
+  getTestMultiProvider,
+  testChainConnectionConfigs,
 } from '@abacus-network/sdk';
 import { ethers } from 'hardhat';
 import { HelloWorldChecker } from '../../deploy/reserve/check';
-import {
-  getConfigMap,
-  testConfigs,
-} from '../../deploy/reserve/config_local_testnets';
+import { getConfigMap } from '../../deploy/reserve/config_local_testnets';
 import { HelloWorldApp } from '../../app/reserve/app';
-import { HelloWorldContracts, helloWorldFactories } from '../../app/reserve/contracts';
+import {
+  HelloWorldContracts,
+  helloWorldFactories,
+} from '../../app/reserve/contracts';
 import testEnvironmentAddresses from '../../app/environments/test.json';
 
 async function check() {
   const [signer] = await ethers.getSigners();
-  const multiProvider = getMultiProviderFromConfigAndSigner(
-    testConfigs,
+  const multiProvider = getTestMultiProvider(
     signer,
+    testChainConnectionConfigs,
   );
 
   const contractsMap = buildContracts(

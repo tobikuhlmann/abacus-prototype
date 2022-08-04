@@ -1,8 +1,9 @@
 import {
   ChainMap,
   ChainNameToDomainId,
-  getMultiProviderFromConfigAndSigner,
+  getTestMultiProvider,
   MultiProvider,
+  testChainConnectionConfigs,
   TestChainNames,
   TestCoreApp,
   TestCoreDeployer,
@@ -10,11 +11,8 @@ import {
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
 import { expect } from 'chai';
 import { ethers } from 'hardhat';
-import {
-  getConfigMap,
-  HelloWorldConfig,
-  testConfigs,
-} from '../../deploy/reserve/config_local_testnets';
+import { getConfigMap } from '../../deploy/reserve/config_local_testnets';
+import { HelloWorldConfig } from '../../deploy/reserve/types';
 import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
 import { HelloWorld } from '../../types';
 
@@ -34,7 +32,7 @@ describe('HelloWorld', async () => {
   before(async () => {
     [signer] = await ethers.getSigners();
 
-    multiProvider = getMultiProviderFromConfigAndSigner(testConfigs, signer);
+    multiProvider = getTestMultiProvider(signer, testChainConnectionConfigs);
 
     const coreDeployer = new TestCoreDeployer(multiProvider);
     const coreContractsMaps = await coreDeployer.deploy();

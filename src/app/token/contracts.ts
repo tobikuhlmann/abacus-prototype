@@ -4,7 +4,7 @@ import { MentoPrototypeToken, MentoPrototypeToken__factory } from '../../types';
 export type MentoPrototypeTokenFactories = RouterFactories<MentoPrototypeToken>;
 
 export const mentoPrototypeTokenFactories: MentoPrototypeTokenFactories = {
-    router: new MentoPrototypeToken__factory(),
+  router: new MentoPrototypeToken__factory(),
 };
 
 export type MentoPrototypeTokenContracts = RouterContracts<MentoPrototypeToken>;

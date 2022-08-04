@@ -1,33 +1,26 @@
 import '@nomiclabs/hardhat-ethers';
-import { ethers } from 'hardhat';
 
 import {
   AbacusCore,
-  getMultiProviderFromConfigAndSigner,
+  getTestMultiProvider,
   serializeContracts,
+  testChainConnectionConfigs,
 } from '@abacus-network/sdk';
-
-import {
-  getConfigMap,
-  testConfigs,
-} from '../../deploy/reserve/config_local_testnets';
+import { ethers } from 'hardhat';
+import { getConfigMap } from '../../deploy/reserve/config_local_testnets';
 import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
 
 async function main() {
   const [signer] = await ethers.getSigners();
-  const multiProvider = getMultiProviderFromConfigAndSigner(
-    testConfigs,
+  const multiProvider = getTestMultiProvider(
     signer,
+    testChainConnectionConfigs,
   );
 
   const core = AbacusCore.fromEnvironment('test', multiProvider);
   const config = core.extendWithConnectionClientConfig(
     getConfigMap(signer.address),
   );
-
-  console.log('config')
-  console.log(config)
-  console.log(core.getConnectionClientConfigMap())
 
   const deployer = new HelloWorldDeployer(multiProvider, config, core);
   const chainToContracts = await deployer.deploy();

@@ -1,4 +1,4 @@
-# Mento Abacus Prototype
+# Mento Abacus Prototype [Work in progress]
 
 This prototype is based on the Abacus App Template (https://github.com/abacus-network/abacus-app-template) and is testing Abacus functionality for the Mento decentralized reserve. 
 

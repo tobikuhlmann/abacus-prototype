@@ -1,10 +1,10 @@
-export { HelloWorldChecker } from './deploy/reserve/check';
-export { HelloWorldConfig } from './deploy/reserve/types';
-export { HelloWorldDeployer } from './deploy/reserve/deploy';
-export { HelloWorldApp } from './app/reserve/app';
+export { HelloWorldChecker } from './deploy/helloworld/check';
+export { HelloWorldConfig } from './deploy/helloworld/types';
+export { HelloWorldDeployer } from './deploy/helloworld/deploy';
+export { HelloWorldApp } from './app/helloworld/app';
 export {
   HelloWorldContracts,
   HelloWorldFactories,
   helloWorldFactories,
-} from './app/reserve/contracts';
+} from './app/helloworld/contracts';
 export * as types from './types';

@@ -7,13 +7,13 @@ import {
   testChainConnectionConfigs,
 } from '@abacus-network/sdk';
 import { ethers } from 'hardhat';
-import { HelloWorldChecker } from '../../deploy/reserve/check';
-import { getConfigMap } from '../../deploy/reserve/config_local_testnets';
-import { HelloWorldApp } from '../../app/reserve/app';
+import { HelloWorldChecker } from '../../deploy/helloworld/check';
+import { getConfigMap } from '../../deploy/helloworld/config_local_testnets';
+import { HelloWorldApp } from '../../app/helloworld/app';
 import {
   HelloWorldContracts,
   helloWorldFactories,
-} from '../../app/reserve/contracts';
+} from '../../app/helloworld/contracts';
 import testEnvironmentAddresses from '../../app/environments/test.json';
 
 async function check() {

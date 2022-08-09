@@ -1,6 +1,6 @@
 import { ChainName, AbacusRouterChecker } from '@abacus-network/sdk';
-import { HelloWorldApp } from '../../app/reserve/app';
-import { HelloWorldContracts } from '../../app/reserve/contracts';
+import { HelloWorldApp } from '../../app/helloworld/app';
+import { HelloWorldContracts } from '../../app/helloworld/contracts';
 import { HelloWorldConfig } from './types';
 
 export class HelloWorldChecker<

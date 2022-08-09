@@ -29,8 +29,6 @@ async function main() {
 
   const deployer = new MentoPrototypeTokenDeployer(multiProvider, config, core);
   const chainToContracts = await deployer.deploy();
-  console.log('chainToContracts');
-  console.log(chainToContracts.test1);
   const addresses = serializeContracts(chainToContracts);
   console.info('===Contract Addresses===');
   console.info(JSON.stringify(addresses));

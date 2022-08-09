@@ -4,7 +4,7 @@ import { RouterConfig } from '@abacus-network/sdk';
 export type MentoPrototypeTokenConfig = {
   name: string;
   symbol: string;
-  totalSupply: ethers.BigNumberish;
+  totalSupply: ethers.BigNumber;
 };
 
 export type MentoPrototypeTokenRouterConfig = RouterConfig &

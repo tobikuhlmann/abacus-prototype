@@ -1,4 +1,5 @@
 import '@nomiclabs/hardhat-ethers';
+import { ethers } from 'hardhat';
 
 import {
   AbacusCore,
@@ -6,9 +7,14 @@ import {
   serializeContracts,
   testChainConnectionConfigs,
 } from '@abacus-network/sdk';
-import { ethers } from 'hardhat';
-import { getConfigMap } from '../../deploy/reserve/config_local_testnets';
-import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
+import { getReserveConfigMap } from '../../deploy/reserve/config_local_testnets';
+import { MentoCrossChainReserveDeployer } from '../../deploy/reserve/deploy';
+import {
+  extendWithTokenConfig,
+  tokenConfig,
+  getConfigMap,
+} from '../../deploy/token/config_local_testnets';
+import { MentoPrototypeTokenDeployer } from '../../deploy/token/deploy';
 
 async function main() {
   const [signer] = await ethers.getSigners();
@@ -16,15 +22,38 @@ async function main() {
     signer,
     testChainConnectionConfigs,
   );
-
   const core = AbacusCore.fromEnvironment('test', multiProvider);
-  const config = core.extendWithConnectionClientConfig(
+
+  // ===== Dependency deployment Mento Prototype Token =====
+  const connection_config = core.extendWithConnectionClientConfig(
     getConfigMap(signer.address),
   );
+  const tokenDeployerConfig = extendWithTokenConfig(
+    connection_config,
+    tokenConfig,
+  );
+  const tokenDeployer = new MentoPrototypeTokenDeployer(
+    multiProvider,
+    tokenDeployerConfig,
+    core,
+  );
+  const tokenChainToContracts = await tokenDeployer.deploy();
+  const tokenAddresses = serializeContracts(tokenChainToContracts);
+  console.info('===Token Contract Addresses===');
+  console.info(JSON.stringify(tokenAddresses));
 
-  const deployer = new HelloWorldDeployer(multiProvider, config, core);
-  const chainToContracts = await deployer.deploy();
-  const addresses = serializeContracts(chainToContracts);
+  // ===== Deployment Mento Cross-chain reserve =====
+  const reserveConfig = core.extendWithConnectionClientConfig(
+    getReserveConfigMap(signer.address, tokenAddresses),
+  );
+  const reserveDeployer = new MentoCrossChainReserveDeployer(
+    multiProvider,
+    reserveConfig,
+    core,
+  );
+  const reserveChainToContracts = await reserveDeployer.deploy();
+
+  const addresses = serializeContracts(reserveChainToContracts);
   console.info('===Contract Addresses===');
   console.info(JSON.stringify(addresses));
 }

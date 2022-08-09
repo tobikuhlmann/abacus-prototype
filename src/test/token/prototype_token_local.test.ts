@@ -15,7 +15,7 @@ import { ethers as ethersEthers } from 'ethers';
 import { MentoPrototypeTokenRouterConfig } from '../../deploy/token/types';
 import { MentoPrototypeTokenDeployer } from '../../deploy/token/deploy';
 import { MentoPrototypeTokenContracts } from '../../app/token/contracts';
-import { getConfigMap } from '../../deploy/reserve/config_local_testnets';
+import { getConfigMap } from '../../deploy/helloworld/config_local_testnets';
 import {
   extendWithTokenConfig,
   tokenConfig,

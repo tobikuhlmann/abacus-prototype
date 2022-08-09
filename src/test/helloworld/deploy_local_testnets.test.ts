@@ -9,12 +9,12 @@ import {
 } from '@abacus-network/sdk';
 import '@nomiclabs/hardhat-waffle';
 import { ethers } from 'hardhat';
-import { HelloWorldChecker } from '../../deploy/reserve/check';
-import { getConfigMap } from '../../deploy/reserve/config_local_testnets';
-import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
-import { HelloWorldApp } from '../../app/reserve/app';
-import { HelloWorldContracts } from '../../app/reserve/contracts';
-import { HelloWorldConfig } from '../../deploy/reserve/types';
+import { HelloWorldChecker } from '../../deploy/helloworld/check';
+import { getConfigMap } from '../../deploy/helloworld/config_local_testnets';
+import { HelloWorldDeployer } from '../../deploy/helloworld/deploy';
+import { HelloWorldApp } from '../../app/helloworld/app';
+import { HelloWorldContracts } from '../../app/helloworld/contracts';
+import { HelloWorldConfig } from '../../deploy/helloworld/types';
 
 describe('deploy', async () => {
   let multiProvider: MultiProvider<TestChainNames>;

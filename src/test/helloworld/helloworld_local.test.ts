@@ -11,9 +11,9 @@ import {
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
 import { expect } from 'chai';
 import { ethers } from 'hardhat';
-import { getConfigMap } from '../../deploy/reserve/config_local_testnets';
-import { HelloWorldConfig } from '../../deploy/reserve/types';
-import { HelloWorldDeployer } from '../../deploy/reserve/deploy';
+import { getConfigMap } from '../../deploy/helloworld/config_local_testnets';
+import { HelloWorldConfig } from '../../deploy/helloworld/types';
+import { HelloWorldDeployer } from '../../deploy/helloworld/deploy';
 import { HelloWorld } from '../../types';
 
 describe('HelloWorld', async () => {

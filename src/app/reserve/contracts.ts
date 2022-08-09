@@ -1,10 +1,16 @@
 import { RouterContracts, RouterFactories } from '@abacus-network/sdk';
-import { HelloWorld, HelloWorld__factory } from '../../types';
+import {
+  MentoCrossChainReserve,
+  MentoCrossChainReserve__factory,
+} from '../../types';
 
-export type HelloWorldFactories = RouterFactories<HelloWorld>;
+export type MentoCrossChainReserveFactories =
+  RouterFactories<MentoCrossChainReserve>;
 
-export const helloWorldFactories: HelloWorldFactories = {
-  router: new HelloWorld__factory(),
-};
+export const mentoCrossChainReserveFactories: MentoCrossChainReserveFactories =
+  {
+    router: new MentoCrossChainReserve__factory(),
+  };
 
-export type HelloWorldContracts = RouterContracts<HelloWorld>;
+export type MentoCrossChainReserveContracts =
+  RouterContracts<MentoCrossChainReserve>;

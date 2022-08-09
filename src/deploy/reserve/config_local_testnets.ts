@@ -1,17 +1,24 @@
 import { ChainMap, TestChainNames } from '@abacus-network/sdk';
 
-export function getConfigMap(
+export function getReserveConfigMap(
   signerAddress: string,
-): ChainMap<TestChainNames, { owner: string }> {
+  prototypeTokenAddresses,
+): ChainMap<
+  TestChainNames,
+  { owner: string; mentoPrototypeTokenAddress: string }
+> {
   return {
     test1: {
       owner: signerAddress,
+      mentoPrototypeTokenAddress: prototypeTokenAddresses.test1.router,
     },
     test2: {
       owner: signerAddress,
+      mentoPrototypeTokenAddress: prototypeTokenAddresses.test2.router,
     },
     test3: {
       owner: signerAddress,
+      mentoPrototypeTokenAddress: prototypeTokenAddresses.test3.router,
     },
   };
 }

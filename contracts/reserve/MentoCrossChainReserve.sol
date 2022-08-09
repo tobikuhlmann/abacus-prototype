@@ -7,7 +7,7 @@ import {MentoPrototypeToken} from "../token/MentoPrototypeToken.sol";
 
 /*
  * @title The Mento Cross-chain Reserve
- * @dev This contract holds and rebalances the MentoProtocolToken
+ * @dev This contract holds and rebalances the MentoPrototypeToken
  */
 contract MentoCrossChainReserve is Router {
     MentoPrototypeToken public mentoPrototypeToken;
@@ -38,10 +38,10 @@ contract MentoCrossChainReserve is Router {
     );
 
     /**
-     * @notice Emitted when a new MentoProtocolToken is set.
-     * @param mentoProtocolToken The address of the MentoProtocolToken contract
+     * @notice Emitted when a new MentoPrototypeToken is set.
+     * @param mentoPrototypeToken The address of the MentoPrototypeToken contract
      */
-    event MentoProtocolTokenSet(address indexed mentoProtocolToken);
+    event MentoPrototypeTokenSet(address indexed mentoPrototypeToken);
 
     /**
      * @notice Emitted when a rebalance transfer is sent
@@ -63,7 +63,7 @@ contract MentoCrossChainReserve is Router {
         // Alternatively, this could be done later in an initialize method
         _setAbacusConnectionManager(_abacusConnectionManager);
         _setInterchainGasPaymaster(_interchainGasPaymaster);
-        _setMentoProtocolToken(_mentoPrototypeToken);
+        _setMentoPrototypeToken(_mentoPrototypeToken);
     }
 
     // ============ External functions ============
@@ -102,14 +102,14 @@ contract MentoCrossChainReserve is Router {
 
     /**
      * @notice Sets the address of the application's AbacusConnectionManager.
-     * @param _mentoProtocolToken The address of the MentoProtocolToken contract.
+     * @param _mentoPrototypeToken The address of the MentoPrototypeToken contract.
      */
-    function setMentoProtocolToken(address _mentoProtocolToken)
+    function setMentoPrototypeToken(address _mentoPrototypeToken)
         external
         virtual
         onlyOwner
     {
-        _setMentoProtocolToken(_mentoProtocolToken);
+        _setMentoPrototypeToken(_mentoPrototypeToken);
     }
 
     // ============ Internal functions ============
@@ -138,11 +138,11 @@ contract MentoCrossChainReserve is Router {
 
     /**
      * @notice Modify the token contract the reserve uses
-     * @param _mentoProtocolToken The address of the MentoProtocolToken contract
+     * @param _mentoPrototypeToken The address of the MentoPrototypeToken contract
      */
-    function _setMentoProtocolToken(address _mentoProtocolToken) internal {
-        mentoPrototypeToken = MentoPrototypeToken(_mentoProtocolToken);
-        emit MentoProtocolTokenSet(_mentoProtocolToken);
+    function _setMentoPrototypeToken(address _mentoPrototypeToken) internal {
+        mentoPrototypeToken = MentoPrototypeToken(_mentoPrototypeToken);
+        emit MentoPrototypeTokenSet(_mentoPrototypeToken);
     }
 
     /**

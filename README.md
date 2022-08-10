@@ -45,6 +45,11 @@ yarn hardhat run src/scripts/{$application}/deploy_local_testnets.ts --network l
 yarn hardhat run src/scripts/{$application}/deploy_remote_testnets.ts
 ```
 
+Smart contract source code verification is automated in the scripts and can be performed by executing 
+```
+yarn ts-node src/scripts/{$application}/verify.ts
+```
+
 ##### Debug
 - Export environment variable `export DEBUG=abacus:*` in the command line or add in front of commands
 

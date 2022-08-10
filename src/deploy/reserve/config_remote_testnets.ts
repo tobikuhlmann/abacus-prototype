@@ -1,12 +1,12 @@
-import {ChainMap} from '@abacus-network/sdk';
+import { ChainMap } from '@abacus-network/sdk';
 
 export function getReserveConfigMap(
-    signerAddress: Array<string>,
-    prototypeTokenAddresses,
+  signerAddress: Array<string>,
+  prototypeTokenAddresses,
 ): ChainMap<
-    'alfajores' | 'kovan',
-    { owner: string; mentoPrototypeTokenAddress: string }
-    > {
+  'alfajores' | 'kovan',
+  { owner: string; mentoPrototypeTokenAddress: string }
+> {
   return {
     alfajores: {
       owner: signerAddress[0],

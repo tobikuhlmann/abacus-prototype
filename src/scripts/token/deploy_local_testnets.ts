@@ -32,8 +32,11 @@ async function main() {
   const chainToContracts = await deployer.deploy();
   const addresses = serializeContracts(chainToContracts);
   console.info('===Contract Addresses===');
-  console.log(addresses)
-  writeFileSync('./src/constants/token/local_deployment_addresses.json', JSON.stringify(addresses));
+  console.log(addresses);
+  writeFileSync(
+    './src/constants/token/local_deployment_addresses.json',
+    JSON.stringify(addresses),
+  );
 }
 
 main()

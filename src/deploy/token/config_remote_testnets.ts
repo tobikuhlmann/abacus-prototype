@@ -1,4 +1,4 @@
-import {ChainMap, objMap} from '@abacus-network/sdk';
+import { ChainMap, objMap } from '@abacus-network/sdk';
 import { ethers } from 'hardhat';
 import { StaticCeloJsonRpcProvider } from '@abacus-network/celo-ethers-provider';
 import {
@@ -6,7 +6,7 @@ import {
   kovan_json_rpc_provider,
   kovan_private_key,
 } from '../../../secrets.json';
-import {MentoPrototypeTokenRouterConfig} from "./types";
+import { MentoPrototypeTokenRouterConfig } from './types';
 
 const alfajores_provider = new StaticCeloJsonRpcProvider(
   'https://alfajores-forno.celo-testnet.org',
@@ -58,10 +58,9 @@ export function getConfigMap(
   };
 }
 
-
 export function extendWithTokenConfig(
-    config,
-    tokenConfig,
+  config,
+  tokenConfig,
 ): ChainMap<'alfajores' | 'kovan', MentoPrototypeTokenRouterConfig> {
   return objMap(config, (chain, config) => {
     return {

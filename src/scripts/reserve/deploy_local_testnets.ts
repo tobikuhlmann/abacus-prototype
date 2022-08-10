@@ -15,7 +15,7 @@ import {
   getConfigMap,
 } from '../../deploy/token/config_local_testnets';
 import { MentoPrototypeTokenDeployer } from '../../deploy/token/deploy';
-import {writeFileSync} from "fs";
+import { writeFileSync } from 'fs';
 
 async function main() {
   const [signer] = await ethers.getSigners();
@@ -56,8 +56,11 @@ async function main() {
 
   const addresses = serializeContracts(reserveChainToContracts);
   console.info('===Contract Addresses===');
-  console.log(addresses)
-  writeFileSync('./src/constants/reserve/local_deployment_addresses.json', JSON.stringify(addresses));
+  console.log(addresses);
+  writeFileSync(
+    './src/constants/reserve/local_deployment_addresses.json',
+    JSON.stringify(addresses),
+  );
 }
 
 main()

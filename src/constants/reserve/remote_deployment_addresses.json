@@ -1,0 +1,4 @@
+{
+  "alfajores": { "router": "0xe8A7a0c7DB557C3782B1899De32B0e3fDf4263C0" },
+  "kovan": { "router": "0x681D53A5101fF476e8B0d29a926b5566789c7341" }
+}

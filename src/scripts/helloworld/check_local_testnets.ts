@@ -14,7 +14,7 @@ import {
   HelloWorldContracts,
   helloWorldFactories,
 } from '../../app/helloworld/contracts';
-import testEnvironmentAddresses from '../../app/environments/test.json';
+import testEnvironmentAddresses from '../../constants/helloworld/local_test_addresses.json';
 
 async function check() {
   const [signer] = await ethers.getSigners();

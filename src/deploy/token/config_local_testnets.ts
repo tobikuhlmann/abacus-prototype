@@ -8,7 +8,7 @@ import { ethers } from 'ethers';
 export const tokenConfig: MentoPrototypeTokenConfig = {
   name: 'MentoPrototypeToken',
   symbol: 'MPT',
-  totalSupply: ethers.BigNumber.from(1000000),
+  totalSupply: ethers.BigNumber.from('1000000000000000000000000'),
 };
 
 export function getConfigMap(

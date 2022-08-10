@@ -1,7 +1,5 @@
 import { exec } from 'child_process';
 
-// from
-
 export function execCmd(
   cmd: string,
   execOptions: any = {},

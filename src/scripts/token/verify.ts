@@ -1,6 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
-import verification from '../../constants/helloworld/remote_test_verification.json';
-//import abacus_core_mento_test from '../app/environments/abacus_core_mento_test.json'
+import verification from '../../constants/token/remote_test_verification.json';
 
 import { CompilerOptions, MentoChainMap } from '../types';
 import { execCmd } from '../../utils/utils';
@@ -14,22 +13,11 @@ import {
 async function main() {
   const multiProvider = new MultiProvider(mentoTestnet2Configs);
 
-  // get configs for constructor arguments
-  //const core = new AbacusCore(abacus_core_mento_test, multiProvider);
-  /*
-    const core = AbacusCore.fromEnvironment('testnet2', multiProvider);
-    const config = core.extendWithConnectionClientConfig(
-        getConfigMap(signers_addresses),
-    );
-    console.log('core config')
-    console.log(config)
-    */
-
-  const sourcePath = './contracts/HelloWorldFlattened.sol';
+  const sourcePath = './contracts/token/MentoPrototypeTokenFlattened.sol';
 
   if (!existsSync(sourcePath)) {
     await execCmd(
-      `npx hardhat flatten ./contracts/HelloWorld.sol > ./contracts/HelloWorldFlattened.sol`,
+      `npx hardhat flatten ./contracts/token/MentoPrototypeToken.sol > ./contracts/token/MentoPrototypeTokenFlattened.sol`,
     );
     let flattenedSource = readFileSync(sourcePath, { encoding: 'utf8' });
     // Make SPDX license identifiers compiler compatible
@@ -72,4 +60,4 @@ main()
   .then(() => console.info('Verification complete'))
   .catch(console.error);
 
-// run with `npx ts-node src/scripts/verify.ts`
+// run with `yarn ts-node src/scripts/token/verify.ts`

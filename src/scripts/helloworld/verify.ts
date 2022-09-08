@@ -29,7 +29,7 @@ async function main() {
 
   if (!existsSync(sourcePath)) {
     await execCmd(
-      `npx hardhat flatten ./contracts/HelloWorld.sol > ./contracts/HelloWorldFlattened.sol`,
+      `npx hardhat flatten ./contracts/helloworld/HelloWorld.sol > ./contracts/HelloWorldFlattened.sol`,
     );
     let flattenedSource = readFileSync(sourcePath, { encoding: 'utf8' });
     // Make SPDX license identifiers compiler compatible
@@ -72,4 +72,4 @@ main()
   .then(() => console.info('Verification complete'))
   .catch(console.error);
 
-// run with `npx ts-node src/scripts/verify.ts`
+// run with `npx ts-node src/scripts/helloworld/verify.ts`

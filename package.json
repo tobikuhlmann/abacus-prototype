@@ -6,7 +6,8 @@
     "@abacus-network/sdk": "^0.4.0",
     "@openzeppelin/contracts-upgradeable": "^4.6.0",
     "ethers": "^5.6.8",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "solc": "^0.8.16"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
